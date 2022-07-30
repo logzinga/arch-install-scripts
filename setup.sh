@@ -25,6 +25,8 @@ fi
 clear
 
 timedatectl set-ntp true
+ntpd -qg
+hwclock -w
 
 
 fdisk -l
