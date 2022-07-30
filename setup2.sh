@@ -3,7 +3,7 @@
 clear
 echo "Do you need to connect to wifi? [ y/n ]"
 read WIFICHECK
-if [ $WIFICHECK = y]
+if [ $WIFICHECK = y ]
         then
             echo "Entering NetworkManager Interface..."
             nmtui
@@ -73,7 +73,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 clear
 echo "Would you like to have KDE or No Desktop Enviornment (more coming soon) [ kde / none ]"
 read DESKTOPENVIRONMENT
- if [ $DESKTOPENVIRONMENT = kde]
+ if [ $DESKTOPENVIRONMENT = kde ]
     then
         clear
         echo "Installing KDE..."
@@ -121,7 +121,7 @@ pacman -Syu sudo
 clear
 echo "Would you like to download Firefox or Chromium? [ firefox/chromium ]"
 read BROWSER
-    if [ $BROWSER = firefox]
+    if [ $BROWSER = firefox ]
         then
             pacman -Syu firefox
     fi
