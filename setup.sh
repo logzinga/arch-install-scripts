@@ -1,5 +1,6 @@
 #!/bin/bash
 
+clear
 echo "UEFI Is Required, are you on UEFI? [y/n]"
 read UEFICHECK
 if [ $UEFICHECK = n ]
