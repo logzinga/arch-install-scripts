@@ -26,8 +26,9 @@ ln -sf /usr/share/zoneinfo/$COUNTRY/$CITY etc/localtime
 hwclock --systohc
 
 clear
-echo "The next part will need user input in NANO, we are now setting locales, if you don't know what locales you need, only uncomment [ en_US.UTF-8 UTF-8 ]"
-sleep 10
+echo "Would you like to enter your locales manually or have it set to default? [ m/d ]"
+read LOCALEMD
+    if []
 nano /etc/locale.gen
 
 clear
