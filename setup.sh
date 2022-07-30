@@ -38,4 +38,4 @@ parted /dev/$DRIVETYPE set 1 esp on
 
 parted /dev/$DRIVETYPE mkpart "swap" linux-swap 301MiB 16GiB
 
-parted /dev/$DRIVETYPE mkpart "r" 16GiB 100%
+parted /dev/$DRIVETYPE mkpart "root" 16GiB 100%
