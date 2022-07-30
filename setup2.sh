@@ -82,7 +82,7 @@ read DESKTOPENVIRONMENT
         echo "Installing KDE Applications..."
         pacman -Syu kde-applications
         pacman -R konqueror
-        echo "Enabaling SDDM..."
+        echo "Enabling SDDM..."
         sleep 2
         systemctl enable sddm
 fi
@@ -102,14 +102,14 @@ read USERACC
                         clear
                         useradd -m -G wheel $USERACCNAME
                         echo "Passsword for Superuser Account:"
-                        passwd
+                        passwd $USERACCNAME
                 fi
                 if [ $SUPERUSERACC = n ]
                     then
                         clear
                         useradd -m $USERACCNAME
                         echo "Password for User Account:"
-                        passwd
+                        passwd $USERACCNAME
                 fi
     fi
 clear
