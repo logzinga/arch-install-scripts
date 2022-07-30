@@ -22,7 +22,7 @@ sleep 2
 
 clear
 echo "Setting Timezone..."
-ln -sf /usr/share/zoneinfo/$COUNTRY/$CITY etc/localtime
+ln -sf /usr/share/zoneinfo/$COUNTRY/$CITY /etc/localtime
 
 hwclock --systohc
 
@@ -111,7 +111,7 @@ read USERACC
                         echo "Password for User Account:"
                         passwd
                 fi
-
+    fi
 clear
 echo "Installing Sudo..."
 sleep 5
