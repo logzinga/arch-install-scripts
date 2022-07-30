@@ -7,4 +7,3 @@ if [ $INTERNETCONNECT = n ]
 		echo "You must be connected to the Internet to Continue"
 		clear
 		exit
-fi
