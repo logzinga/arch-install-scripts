@@ -6,6 +6,7 @@ read WIFICHECK
 if [ $WIFICHECK = y ]
         then
             echo "Entering NetworkManager Interface..."
+            sleep 1
             nmtui
 fi
 
@@ -22,6 +23,7 @@ sleep 2
 
 clear
 echo "Setting Timezone..."
+sleep 1
 ln -sf /usr/share/zoneinfo/$COUNTRY/$CITY /etc/localtime
 
 hwclock --systohc
@@ -45,7 +47,7 @@ fi
 
 clear
 echo "In the NANO program that should appear, enter what you want to call your Computer."
-sleep 10
+sleep 5
 nano /etc/hostname
 
 clear
@@ -66,6 +68,7 @@ fi
 
 clear
 echo "Installing GRUB..."
+sleep 2
 pacman -Syu grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -77,11 +80,11 @@ read DESKTOPENVIRONMENT
     then
         clear
         echo "Installing KDE..."
-        pacman -Syu plasma plasma-wayland-session sddm
+        pacman -Syu plasma plasma-wayland-session sddm --noconfirm
         clear
         echo "Installing KDE Applications..."
-        pacman -Syu kde-applications
-        pacman -R konqueror
+        pacman -Syu kde-applications --noconfirm
+        pacman -R konqueror --noconfirm
         echo "Enabling SDDM..."
         sleep 2
         systemctl enable sddm
@@ -116,22 +119,23 @@ clear
 echo "Installing Sudo..."
 sleep 5
 cp files/sudoers /etc/sudoers
-pacman -Syu sudo
+pacman -Syu sudo --noconfirm
 
 clear
 echo "Would you like to download Firefox or Chromium? [ firefox/chromium ]"
 read BROWSER
     if [ $BROWSER = firefox ]
         then
-            pacman -Syu firefox
+            pacman -Syu firefox --noconfirm
     fi
     if [ $BROWSER = chromium ]
         then
-            pacman -Syu chromium
+            pacman -Syu chromium --noconfirm
     fi
 
 clear
 echo "Configuring Pacman..."
+sleep 3
 rm /etc/pacman.conf
 cp files/pacman.conf /etc/pacman.conf
 

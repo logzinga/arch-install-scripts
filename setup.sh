@@ -89,6 +89,7 @@ fi
 
 clear
 echo "Installing Arch Packages..."
+pacman -Sy archlinux-keyring --noconfirm
 sleep 1
 pacstrap /mnt base linux linux-firmware nano
 
