@@ -36,6 +36,6 @@ parted /dev/$DRIVETYPE mklabel gpt
 parted /dev/$DRIVETYPE mkpart "EFI" fat32 1MiB 301MiB
 parted /dev/$DRIVETYPE set 1 esp on
 
-parted /dev/$DRIVETYPE mkpart "swap" linux-swap 301MiB 16GiB
+parted /dev/$DRIVETYPE mkpart "swap" linux-swap 301MiB 1%
 
-parted /dev/$DRIVETYPE mkpart "root" 16GiB 100%
+parted /dev/$DRIVETYPE mkpart "root" 1% 100%
