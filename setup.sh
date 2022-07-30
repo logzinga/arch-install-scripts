@@ -36,6 +36,8 @@ parted /dev/$DRIVETYPE mklabel gpt
 parted /dev/$DRIVETYPE mkpart "EFI" fat32 1MiB 301MiB
 parted /dev/$DRIVETYPE set 1 esp on
 
-parted /dev/$DRIVETYPE mkpart "swap" linux-swap 301MiB 1%
+echo "How much Swap Space do you want?"
+read SWAPAMOUNT
+parted /dev/$DRIVETYPE mkpart "swap" linux-swap 301MiB $SWAPAMOUNT
 
-parted /dev/$DRIVETYPE mkpart "root" 1% 100%
+parted /dev/$DRIVETYPE mkpart "root" $SWAPAMOUNT 100%
