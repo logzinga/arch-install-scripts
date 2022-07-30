@@ -33,5 +33,9 @@ read DRIVETYPE
 clear
 
 parted /dev/$DRIVETYPE mklabel gpt
-parted /dev/$DRIVETYPE mkpart "EFI system partition" fat32 1MiB 301MiB
+parted /dev/$DRIVETYPE mkpart "EFI" fat32 1MiB 301MiB
 parted /dev/$DRIVETYPE set 1 esp on
+
+parted /dev/$DRIVETYPE mkpart "swap partition" linux-swap 301MiB 16GiB
+
+parted /dev/$DRIVETYPE mkpart "Local Disk" 16GiB 100%
