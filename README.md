@@ -7,7 +7,7 @@ apologies if this repo is really bad. i am not good at this stuff
 
 * Install git (pacman -S git)
 
-* Clone Repo (git clone https://github.com/logzinga/arch-install-scripts)
+* Clone Repo (git clone https://github.com/logzinga/arch-install-scripts.git)
 
 * Go into folder (cd arch-install-scripts)
 
