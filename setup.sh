@@ -54,7 +54,7 @@ parted /dev/$DRIVETYPE mkpart "root" ext4 $SWAPAMOUNT 100%
 
 clear
 fdisk -l
-echo "What drive type are you using? [ sda/vda/nvme0n1 ]"
+echo "What drive type are you using? [ sda/vda/nvme0n1 ]" # literally don't need this prompt at all, whatever
 read DRIVE2
 if [ $DRIVE2 = vda ]
 	then

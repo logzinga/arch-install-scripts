@@ -57,7 +57,7 @@ mkinitcpio -P
 
 clear
 echo "Would you like to have a Root Account? [ y/n ]"
-read $ROOTACC
+read ROOTACC
     if [ $ROOTACC = y ]
         then
             echo "Creating Root Account..."
