@@ -159,6 +159,13 @@ sleep 3
 rm /etc/pacman.conf
 cp files/pacman.conf /etc/pacman.conf
 
+if [ $NVIDIAGPUNEW = y ]
+                    then
+                        clear
+                        echo "Installing NVIDIA Drivers..."             # it would be better if i named it something along 32-bit, whatever
+                        pacman -Syu lib32-nvidia-utils --noconfirm 
+                fi 
+
 clear
 echo "You have finished your install of Arch Linux!"
 echo "When you are ready you can restart your computer."
