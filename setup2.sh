@@ -89,7 +89,7 @@ read NVIDIAGPU
 clear
 echo "Installing GRUB..."
 sleep 2
-pacman -Syu grub efibootmgr intel-ucode amd-ucode
+pacman -Syu grub efibootmgr intel-ucode amd-ucode --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -152,7 +152,7 @@ cp files/sudoers /etc/sudoers
 pacman -Syu sudo --noconfirm
 
 clear
-echo "Would you like to download Firefox or Chromium? [ firefox/chromium ]"
+echo "Would you like to download a GUI Browser? [ firefox / chromium / none ]"
 read BROWSER
     if [ $BROWSER = firefox ]
         then
