@@ -5,11 +5,15 @@ apologies if this repo is really bad. i am not good at this stuff
 
 # How To Use
 
-* Clone Repo
+* Install git (pacman -S git)
 
-* Go into folder
+* Clone Repo (git clone https://github.com/logzinga/arch-install-scripts)
 
-* Open setup.sh
+* Go into folder (cd arch-install-scripts)
+
+* give setup.sh permissions (chmod +777 setup.sh)
+
+* Open setup.sh (./setup.sh)
 
 ## Disclaimer
 
