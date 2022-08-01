@@ -17,4 +17,4 @@ apologies if this repo is really bad. i am not good at this stuff
 
 ## Disclaimer
 
-i use an nvme drive, i might be creating some scripts that use sda and vda but im not making promises
+i don't have a huge amount of hardware to test this script on, things might not work as planned.
