@@ -94,7 +94,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 clear
-echo "Would you like to have KDE or No Desktop Enviornment (more coming soon) [ kde / none ]"
+echo "Would you like to have KDE or No Desktop Enviornment (more coming soon) [ kde / gnome / none ]"
 read DESKTOPENVIRONMENT
  if [ $DESKTOPENVIRONMENT = kde ]
     then
@@ -108,6 +108,16 @@ read DESKTOPENVIRONMENT
         echo "Enabling SDDM..."
         sleep 2
         systemctl enable sddm
+fi
+ if [ $DESKTOPENVIRONMENT = gnome ] # GNOME needs to be worked apon, UPDATE
+    then
+        clear
+        echo "Installing GNOME..."
+        pacman -Syu gnome gdm --noconfirm # yes i do know gdm has issues with NVIDIA graphics on laptops, FIXME
+        clear
+        echo "Emabiing GDM..."
+        sleep 2
+        systemctl enable gdm
 fi
 
 clear
