@@ -67,9 +67,29 @@ read $ROOTACC
 fi
 
 clear
+echo "Do you have NVIDIA Graphics? [ y/n ]"
+read NVIDIAGPU
+    if [ $NVIDIAGPU = y ]
+        then
+            clear
+            echo "Do you have a newer NVIDIA Graphics Card? [ y/n ]" # this line doesnt include the minimum nvidia graphics card to support the nvidia package... FIXME
+            read NVIDIAGPUNEW
+                if [ $NVIDIAGPUNEW = y ]
+                    then
+                        pacman -Syu nvidia nvidia-settings nvidia-utils nvidia-prime --noconfirm 
+                fi 
+                if [ $NVIDIAGPUNEW = n ]
+                    then
+                        clear
+                                        # this if statement contains nothing, it should contain older NVIDIA driver choices. FIXME
+                    fi   
+
+    fi
+
+clear
 echo "Installing GRUB..."
 sleep 2
-pacman -Syu grub efibootmgr
+pacman -Syu grub efibootmgr intel-ucode amd-ucode
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
