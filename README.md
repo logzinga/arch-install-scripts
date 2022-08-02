@@ -32,6 +32,6 @@ This can be Solved by doing the command "pacman -Sy archlinux-keyring".
 
 If that didn't work, sync your clock with "hwclock -w"
 
-If that didn't work, remove /etc/pacman.d/gnupg (rm /etc/pacman.d/gnupg) and then run "pacman-key --init" then run "pacman-key --populate"
+If that didn't work, remove /etc/pacman.d/gnupg (rm -R /etc/pacman.d/gnupg) and then run "pacman-key --init" then run "pacman-key --populate"
 
 More Information: https://wiki.archlinux.org/title/Pacman/Package_signing#Upgrade_system_regularly

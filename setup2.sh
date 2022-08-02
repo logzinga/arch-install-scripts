@@ -14,7 +14,7 @@ clear
 echo "What country are you in?"
 read COUNTRY
 sleep 2
-
+                                        # i absolutely hate how im doing the timezone selection, FIXME
 clear
 echo "What city is your timezone set to?"
 read CITY
