@@ -18,6 +18,8 @@ apologies if this repo is really bad. i am not good at this stuff
 # Plans
 * Have a WiFi dialogue for Inital Setup
 
+* Wiki page for issues
+
 ## Disclaimer
 
 i don't have a huge amount of hardware to test this script on, things might not work as planned.
