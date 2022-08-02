@@ -16,7 +16,7 @@ apologies if this repo is really bad. i am not good at this stuff
 * Open setup.sh (./setup.sh)
 
 # Plans
--[ ] Have a WiFi dialogue for Inital Setup
+* Have a WiFi dialogue for Inital Setup
 
 ## Disclaimer
 
