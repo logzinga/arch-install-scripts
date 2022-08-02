@@ -24,7 +24,7 @@ i don't have a huge amount of hardware to test this script on, things might not 
 
 # Issues
 
-When installing git you could run into an issue with PGP Signatures.
+### When installing git you could run into an issue with PGP Signatures.
 
 This can be Solved by doing the command "pacman -Sy archlinux-keyring".
 
