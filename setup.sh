@@ -53,10 +53,9 @@ parted /dev/$DRIVETYPE mkpart "swap" linux-swap 301MiB $SWAPAMOUNT
 parted /dev/$DRIVETYPE mkpart "root" ext4 $SWAPAMOUNT 100%
 
 clear
-fdisk -l
-echo "What drive type are you using? [ sda/vda/nvme0n1 ]" # literally don't need this prompt at all, whatever
-read DRIVE2
-if [ $DRIVE2 = vda ]
+echo "Formatting Partitions..." 
+sleep 2
+if [ $DRIVETYPE = vda ]
 	then
 		mkfs.ext4 /dev/vda3
         mkswap /dev/vda2
@@ -66,7 +65,7 @@ if [ $DRIVE2 = vda ]
         mount --mkdir /dev/vda1 /mnt/boot
         swapon /dev/vda2
 fi
-if [ $DRIVE2 = sda ]
+if [ $DRIVETYPE = sda ]
 	then
 		mkfs.ext4 /dev/sda3
         mkswap /dev/sda2
@@ -76,7 +75,7 @@ if [ $DRIVE2 = sda ]
         mount --mkdir /dev/sda1 /mnt/boot
         swapon /dev/sda2
 fi
-if [ $DRIVE2 = nvme0n1 ]
+if [ $DRIVETYPE = nvme0n1 ]
 	then
 		mkfs.ext4 /dev/nvme0n1p3
         mkswap /dev/nvme0n1p2
