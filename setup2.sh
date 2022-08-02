@@ -94,7 +94,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 clear
-echo "Would you like to have KDE or No Desktop Enviornment (more coming soon) [ kde / gnome / none ]"
+echo "Would you like to have KDE or No Desktop Enviornment (more coming soon) [ kde / gnome / xfce / none ]"
 read DESKTOPENVIRONMENT
  if [ $DESKTOPENVIRONMENT = kde ]
     then
@@ -118,6 +118,16 @@ fi
         echo "Emabiing GDM..."
         sleep 2
         systemctl enable gdm
+fi
+if [ $DESKTOPENVIRONMENT = xfce ]
+    then 
+        clear
+        echo "Installing xfce..."
+        pacman -Syu xfce4 sddm --noconfirm # i don't like xfce using sddm, FIXME
+        clear
+        echo "Enabling SDDM..."
+        sleep 2
+        systemctl enable sddm
 fi
 
 clear
