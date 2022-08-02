@@ -110,8 +110,15 @@ pacstrap /mnt networkmanager
 
 
 clear
-echo "When booting into the new system, make sure to do systemctl enable NetworkManager and systemctl start NetworkManager (with caps)."
+echo "When booting into the new system, make sure to do systemctl enable NetworkManager (with caps)."
 sleep 3
 echo "You will need to clone the git repository again and run setup2.sh to continue with the setup."
 arch-chroot /mnt
+
+systemctl enable NetworkManager
+git clone https://github.com/logzinga/arch-install-scripts # i hope these lines work, it would make a lot of things easier
+cd arch-install-scripts
+./setup2.sh
+
+
 
