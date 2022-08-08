@@ -94,7 +94,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 clear
-echo "Would you like to have KDE or No Desktop Enviornment (more coming soon) [ kde / gnome / xfce / none ]"
+echo "Would you like to have a Desktop Enviornment (more coming soon) [ kde / gnome / xfce / none ]"
 read DESKTOPENVIRONMENT
  if [ $DESKTOPENVIRONMENT = kde ]
     then
@@ -182,7 +182,7 @@ cp files/pacman.conf /etc/pacman.conf
 if [ $NVIDIAGPUNEW = y ]
                     then
                         clear
-                        echo "Installing NVIDIA Drivers..."             # it would be better if i named it something along 32-bit, whatever
+                        echo "Installing 32-Bit NVIDIA Drivers..."
                         pacman -Syu lib32-nvidia-utils --noconfirm 
                 fi 
 
