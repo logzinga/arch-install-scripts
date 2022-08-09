@@ -46,9 +46,10 @@ if [ $LOCALEMD = d ]
 fi
 
 clear
-echo "In the NANO program that should appear, enter what you want to call your Computer." # this should be more user friendly, its also really easy to do. FIXME
-sleep 5
-nano /etc/hostname
+echo "What would you like to call your computer? (no spaces or special characters)"
+read COMPUTERNAME
+echo $COMPUTERNAME >> /etc/hostname 
+
 
 clear
 echo "Running mkinitcpio..."
