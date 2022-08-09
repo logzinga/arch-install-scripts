@@ -72,7 +72,7 @@ read NVIDIAGPU
     if [ $NVIDIAGPU = y ]
         then
             clear
-            echo "Do you have a newer NVIDIA Graphics Card? [ y/n ]" # this line doesnt include the minimum nvidia graphics card to support the nvidia package... FIXME
+            echo "Do you have a newer NVIDIA Graphics Card? (GeForce GTX 745 or higher) [ y/n ]"
             read NVIDIAGPUNEW
                 if [ $NVIDIAGPUNEW = y ]
                     then
@@ -81,7 +81,34 @@ read NVIDIAGPU
                 if [ $NVIDIAGPUNEW = n ]
                     then
                         clear
-                                        # this if statement contains nothing, it should contain older NVIDIA driver choices. FIXME
+                        echo "What NVIDIA driver version would you like? [ 470 / 390 / nouveau ]"   # not enough driver choices.
+                        read OLDNVIDIADRIVER
+                        if [ $OLDNVIDIADRIVER = 470 ]
+                            then
+                                clear
+                                echo "Installing NVIDIA Driver 390..."
+                                sleep 2
+                                git clone https://aur.archlinux.org/nvidia-390xx-utils.git
+                                cd nvidia-390xx-utils
+                                makepkg -csi 
+                                clear
+                                echo "Cleaning Up..."
+                                cd ..
+                                rm -R nvidia-390xx-utils
+                            fi
+                            if [ $OLDNVIDIADRIVER = 390 ]
+                            then
+                                clear
+                                echo "Installing NVIDIA Driver 470..."
+                                sleep 2
+                                git clone https://aur.archlinux.org/nvidia-470xx-utils.git
+                                cd nvidia-470xx-utils
+                                makepkg -csi 
+                                clear
+                                echo "Cleaning Up..."
+                                cd ..
+                                rm -R nvidia-470xx-utils
+                            fi
                     fi   
 
     fi
@@ -179,7 +206,7 @@ sleep 3
 rm /etc/pacman.conf
 cp files/pacman.conf /etc/pacman.conf
 
-if [ $NVIDIAGPUNEW = y ]
+if [ $NVIDIAGPU = y ]
                     then
                         clear
                         echo "Installing 32-Bit NVIDIA Drivers..."
