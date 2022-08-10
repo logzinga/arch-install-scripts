@@ -11,7 +11,7 @@ if [ $WIFICHECK = y ]
 fi
 
 clear
-echo "What country are you in?"
+echo "What timezone is your country in?"
 read COUNTRY
 sleep 2
                                         # i absolutely hate how im doing the timezone selection, FIXME
