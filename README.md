@@ -5,7 +5,7 @@ apologies if this repo is really bad. i am not good at this stuff
 
 # How To Use
 
-* Install git (pacman -S git)
+* Install git (pacman -Sy git)
 
 * Clone Repo (git clone https://github.com/logzinga/arch-install-scripts.git)
 
