@@ -40,6 +40,8 @@ If that didn't work, sync your clock with "hwclock -w"
 
 If that didn't work, remove /etc/pacman.d/gnupg (rm -R /etc/pacman.d/gnupg) and then run "pacman-key --init" then run "pacman-key --populate"
 
+You can also try rebooting the live environment.
+
 More Information: https://wiki.archlinux.org/title/Pacman/Package_signing#Upgrade_system_regularly
 
 # License
