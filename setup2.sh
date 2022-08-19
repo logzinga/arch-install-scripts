@@ -118,11 +118,11 @@ clear
 echo "Installing GRUB..."
 sleep 2
 pacman -Syu grub efibootmgr intel-ucode amd-ucode --noconfirm
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # possibly Legacy Boot support at some point?
 grub-mkconfig -o /boot/grub/grub.cfg
 
 clear
-echo "Would you like to have a Desktop Enviornment (more coming soon) [ kde / gnome / xfce / none ]"
+echo "Would you like to have a Desktop Enviornment (more coming soon) [ mate / kde / gnome / xfce / none ]"
 read DESKTOPENVIRONMENT
  if [ $DESKTOPENVIRONMENT = kde ]
     then
@@ -137,12 +137,14 @@ read DESKTOPENVIRONMENT
         sleep 2
         systemctl enable sddm
 fi
- if [ $DESKTOPENVIRONMENT = gnome ] # GNOME needs to be worked apon, UPDATE
+ if [ $DESKTOPENVIRONMENT = gnome ]
     then
         clear
         echo "Installing GNOME..."
         pacman -Syu gnome gdm --noconfirm # yes i do know gdm has issues with NVIDIA graphics on laptops, FIXME
         clear
+        echo "Installing GNOME Extras..."
+        pacman -Syu gnome-extra --noconfirm
         echo "Emabiing GDM..."
         sleep 2
         systemctl enable gdm
@@ -154,6 +156,18 @@ if [ $DESKTOPENVIRONMENT = xfce ]
         pacman -Syu xfce4 sddm --noconfirm # i don't like xfce using sddm, FIXME
         clear
         echo "Enabling SDDM..."
+        sleep 2
+        systemctl enable sddm
+fi
+if [ $DESKTOPENVIRONMENT = mate ]
+    then
+        clear
+        echo "Installing MATE..."
+        pacman -Syu mate sddm --noconfirm
+        clear
+        echo "Installing MATE Extras..."
+        pacman -Syu mate-extra --noconfirm
+        echo "Enabling SDDM..." # ugh, FIXME
         sleep 2
         systemctl enable sddm
 fi
