@@ -24,6 +24,8 @@ apologies if this repo is really bad. i am not good at this stuff
 
 * Post-Install Presets (music, games etc)
 
+* Auto Load setup2.sh in Chroot
+
 ## Disclaimer
 
 i don't have a huge amount of hardware to test this script on, things might not work as planned. feel free to register issues and depending on if im motivated or not i'll work on it
