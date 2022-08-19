@@ -11,12 +11,12 @@ if [ $WIFICHECK = y ]
 fi
 
 clear
-echo "What timezone is your country in?"
+echo "What timezone is your country in? (cap sensitive)"
 read COUNTRY
 sleep 2
                                         # i absolutely hate how im doing the timezone selection, FIXME
 clear
-echo "What city is your timezone set to?"
+echo "What city is your timezone set to? (cap sensitive)"
 read CITY
 sleep 2
 
@@ -53,7 +53,7 @@ echo $COMPUTERNAME >> /etc/hostname
 
 clear
 echo "Running mkinitcpio..."
-sleep 5
+sleep 3
 mkinitcpio -P
 
 clear
@@ -132,7 +132,7 @@ read DESKTOPENVIRONMENT
         clear
         echo "Installing KDE Applications..."
         pacman -Syu kde-applications --noconfirm
-        pacman -R konqueror --noconfirm
+        pacman -R konqueror kmix --noconfirm # i hate these :3
         echo "Enabling SDDM..."
         sleep 2
         systemctl enable sddm

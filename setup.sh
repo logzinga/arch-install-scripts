@@ -32,6 +32,8 @@ hwclock -w
 
 fdisk -l
 
+sleep 1
+
 echo "What type of drive are you using? [ sda/vda/nvme0n1 ]"
 read DRIVETYPE
 
