@@ -1,6 +1,8 @@
 #!/bin/bash
 
 clear
+
+systemctl enable NetworkManager
 echo "Do you need to connect to wifi? [ y/n ]"
 read WIFICHECK
 if [ $WIFICHECK = y ]
@@ -230,7 +232,9 @@ if [ $NVIDIAGPU = y ]
 
 clear
 echo "You have finished your install of Arch Linux!"
+sleep 1
 echo "When you are ready you can restart your computer."
+sleep 1
 echo "If you want to leave the install, do exit then reboot."
 
 

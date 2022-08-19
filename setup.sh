@@ -111,9 +111,11 @@ pacstrap /mnt networkmanager
 
 
 clear
-echo "When booting into the new system, make sure to do systemctl enable NetworkManager (with caps)."
+echo "You are now booting into the Chroot environment."
 sleep 3
-echo "You will need to clone the git repository again and run setup2.sh to continue with the setup."
+echo "When ready, type 'git clone https://github.com/logzinga/arch-install-scripts.git' "
+echo "then type 'cd arch-install-scripts'"
+echo "then type './setup2.sh'"
 arch-chroot /mnt
 
 
