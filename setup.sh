@@ -34,7 +34,7 @@ fdisk -l
 
 sleep 1
 
-echo "What type of drive are you using? [ sda/vda/nvme0n1 ]"
+echo "What type of drive are you using? [ sda/vda/nvme0n1 ]" # add more drive types if possible
 read DRIVETYPE
 
 clear

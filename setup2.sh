@@ -235,6 +235,6 @@ echo "You have finished your install of Arch Linux!"
 sleep 1
 echo "When you are ready you can restart your computer."
 sleep 1
-echo "If you want to leave the install, do exit then reboot."
+echo "If you want to leave the install, do 'exit' then 'reboot'."
 
 
