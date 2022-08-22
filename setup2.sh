@@ -84,7 +84,7 @@ read NVIDIAGPU
                 if [ $NVIDIAGPUNEW = n ]
                     then
                         clear
-                        echo "What NVIDIA driver version would you like? [ 470 / 390 / nouveau ]"   # not enough driver choices.
+                        echo "What NVIDIA driver version does your graphics card use? [ 470 / 390 / nouveau ]"   # not enough driver choices.
                         read OLDNVIDIADRIVER
                         if [ $OLDNVIDIADRIVER = 470 ]
                             then
@@ -143,7 +143,7 @@ fi
     then
         clear
         echo "Installing GNOME..."
-        pacman -Syu gnome gdm --noconfirm # yes i do know gdm has issues with NVIDIA graphics on laptops, FIXME
+        pacman -Syu gnome gdm --noconfirm 
         clear
         echo "Installing GNOME Extras..."
         pacman -Syu gnome-extra --noconfirm
