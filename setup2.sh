@@ -206,6 +206,11 @@ cp files/sudoers /etc/sudoers
 pacman -Syu sudo --noconfirm
 
 clear
+echo "Installing pipewire..."
+sleep 5
+pacman -Syu pipewire pipewire-asla pipewire-docs pipewire-jack pipewire-media-session pipewire-media-session-docs pipewire-pulse pipewire-v4l2 pipewire-x11-bell pipewire-zeroconf wireplumber wireplumber-docs --noconfirm
+
+clear
 echo "Would you like to download a GUI Browser? [ firefox / chromium / none ]"
 read BROWSER
     if [ $BROWSER = firefox ]
