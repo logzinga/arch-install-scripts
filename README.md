@@ -24,7 +24,7 @@ apologies if this repo is really bad. i am not good at this stuff
 
 * Legacy BIOS Support
 
-* Post-Install Presets (music, games etc)
+* Post-Install Presets (music, games etc) [ working on ]
 
 * Auto Load setup2.sh in Chroot
 
