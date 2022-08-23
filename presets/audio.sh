@@ -15,7 +15,7 @@ if [ $INTERNETCHECK = n ]
         exit
 fi
 
-echo "This scipt will install (almost) everything you need for playing/editing audio."
+echo "This scipt will install some basic applications you might need for playing/editing audio."
 sleep 2
 echo "Do you want to continue? ( y / n )"
 read CONTINUE 
