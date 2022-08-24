@@ -27,13 +27,13 @@ fi
 echo "Installing Audacity..."
 pacman -Syu audacity --noconfirm
 
-echo "Installing Spotify..."
+echo "Installing Spotify..." # this wont install due to the requirement of root. FIXME
 cd /tmp
 git clone https://aur.archlinux.org/spotify.git
 cd spotify
 makepkg -csi
 
-echo "Installing Cider..."
+echo "Installing Cider..." # this wont install due to root, FIXME
 cd /tmp
 git clone https://aur.archlinux.org/cider.git
 cd cider
