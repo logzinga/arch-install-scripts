@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-echo "UEFI Is Required, are you on UEFI? [y/n]"
+echo "UEFI Is Required, are you on UEFI? [ y / n ]"
 read UEFICHECK
 if [ $UEFICHECK = n ]
 	then
@@ -13,7 +13,7 @@ fi
 
 clear
 
-echo "Have you connected to Internet? [y/n]"
+echo "Have you connected to Internet? [ y / n ]"
 read INTERNETCONNECT
 if [ $INTERNETCONNECT = n ]
 	then
@@ -34,7 +34,7 @@ fdisk -l
 
 sleep 1
 
-echo "What type of drive are you using? [ sda/vda/nvme0n1 ]" # add more drive types if possible
+echo "What type of drive are you using? [ sda / vda / nvme0n1 ]" # add more drive types if possible
 read DRIVETYPE
 
 clear
