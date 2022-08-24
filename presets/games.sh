@@ -24,7 +24,7 @@ if [ $CONTINUE = n ]
         exit
 fi
 
-echo "Installing yay..."
+echo "Installing yay..." # doesnt like root, FIXME
 cd ..
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -39,7 +39,7 @@ pacman -Syu Steam --noconfirm
 echo "Installing Lutris..."
 pacman -Syu lutris --noconfirm
 
-echo "Installing Heroic..."
+echo "Installing Heroic..." # doesnt like root, FIXME
 cd /tmp
 git clone https://aur.archlinux.org/heroic-games-launcher-bin.git
 cd heroic-games-launcher-bin
