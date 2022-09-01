@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ $EUID -ne 0 ]
-        then
-                echo "This program must run as root to function." 
-                exit 1
-fi
+#if [ $EUID -ne 0 ]
+#        then
+#                echo "This program must run as root to function." # Depricated
+#                exit 1
+#fi
 
 echo "Are you connected to the Internet? ( y / n )"
 read INTERNETCHECK
@@ -25,7 +25,7 @@ if [ $CONTINUE = n ]
 fi
 
 echo "Installing Audacity..."
-pacman -Syu audacity --noconfirm
+sudo pacman -Syu audacity --noconfirm
 
 echo "Installing Spotify..." # this wont install due to the requirement of root. FIXME
 cd /tmp
@@ -40,7 +40,7 @@ cd cider
 makepkg -csi
 
 echo "Installing Pulseaudio Volume Control..."
-pacman -Syu pavucontrol
+sudo pacman -Syu pavucontrol
 
 echo "These are the bare basics for music, feel free to suggest things i should add to this script via GitHub."
 sleep 2
