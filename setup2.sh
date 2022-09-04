@@ -38,6 +38,7 @@ read LOCALEMD
         nano /etc/locale.gen
         locale-gen
         echo "Now set the LANG variable accordingly."
+        sleep 2
         nano /etc/locale.conf
 fi
 if [ $LOCALEMD = d ]
