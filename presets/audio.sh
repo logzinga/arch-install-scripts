@@ -6,14 +6,9 @@
 #                exit 1
 #fi
 
-echo "Are you connected to the Internet? ( y / n )"
-read INTERNETCHECK
-if [ $INTERNETCHECK = n ]
-    then
-        echo "You require internet to use this script."
-        sleep 2
-        exit
-fi
+echo "these preset scripts are under construction, somethings may not work as intended. report any issues to GitHub."
+
+sleep 2
 
 echo "This scipt will install some basic applications you might need for playing/editing audio."
 sleep 2
@@ -21,6 +16,15 @@ echo "Do you want to continue? ( y / n )"
 read CONTINUE 
 if [ $CONTINUE = n ]
     then
+        exit
+fi
+
+echo "Are you connected to the Internet? ( y / n )"
+read INTERNETCHECK
+if [ $INTERNETCHECK = n ]
+    then
+        echo "You require internet to use this script."
+        sleep 2
         exit
 fi
 
