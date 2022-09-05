@@ -38,7 +38,7 @@ sleep 1
 
 if [ $UEFICHECK = n ]
     then
-        parted /dev/$DRIVETYPE mklabel mbr
+        parted /dev/$DRIVETYPE mklabel msdos
 fi
 if [ $UEFICHECK = y ]
     then
@@ -61,9 +61,9 @@ fi
 
 if [ $UEFICHECK = n ]
     then
-        parted /dev/$DRIVETYPE mkpart "swap" linux-swap 1MiB $SWAPAMOUNT
+        parted /dev/$DRIVETYPE mkpart primary linux-swap 1MiB $SWAPAMOUNT
 
-        parted /dev/$DRIVETYPE mkpart "root" ext4 $SWAPAMOUNT 100%
+        parted /dev/$DRIVETYPE mkpart primary ext4 $SWAPAMOUNT 100%
 
 fi
 clear
