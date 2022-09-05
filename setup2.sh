@@ -2,7 +2,17 @@
 
 clear
 
+echo "Did you do any changes before the first setup that you want to keep in your Install? ( y / n )"
+read PREVCHANGES
+if [ $PREVCHANGES = n ]
+    then
+        echo "Remake those changes before continuing."
+        sleep 1
+        exit
+fi
+
 systemctl enable NetworkManager
+clear
 echo "Do you need to connect to wifi? [ y/n ]"
 read WIFICHECK
 if [ $WIFICHECK = y ]
@@ -242,5 +252,10 @@ sleep 1
 echo "When you are ready you can restart your computer."
 sleep 1
 echo "If you want to leave the install, do 'exit' then 'reboot'."
+sleep 1
+echo "Cleaning up..."
+sleep 1
+cd ..
+rm -R arch-install-scripts
 
 

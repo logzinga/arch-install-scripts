@@ -24,14 +24,11 @@ if [ $CONTINUE = n ]
         exit
 fi
 
-echo "Installing yay..." 
-cd ..
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -csi
-
 echo "Installing Wine..."
 sudo pacman -Syu wine winetricks --noconfirm
+
+echo "Installing Flatpak..."
+sudo pacman -Syu flatpak --noconfirm
 
 echo "Installing Steam..."
 sudo pacman -Syu Steam --noconfirm
@@ -46,8 +43,12 @@ cd heroic-games-launcher-bin
 makepkg -csi
 cd ~
 
-echo "Installing Flatpak..."
-sudo pacman -Syu flatpak --noconfirm
+echo "Installing yay..." 
+cd /tmp
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -csi
+
 
 echo "You should have a good amount of applications to help you play your games."
 sleep 2

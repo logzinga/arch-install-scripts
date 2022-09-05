@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-echo "UEFI Is Required, are you on UEFI? [ y / n ]"
+echo "UEFI Is Required, are you on UEFI? [ y / n ]" # could be removed at some point... hopefully
 read UEFICHECK
 if [ $UEFICHECK = n ]
 	then

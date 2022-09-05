@@ -27,11 +27,8 @@ fi
 echo "Installing Audacity..."
 sudo pacman -Syu audacity --noconfirm
 
-echo "Installing Spotify..."
-cd /tmp
-git clone https://aur.archlinux.org/spotify.git
-cd spotify
-makepkg -csi
+echo "Installing Pulseaudio Volume Control..."
+sudo pacman -Syu pavucontrol
 
 echo "Installing Cider..."
 cd /tmp
@@ -39,8 +36,11 @@ git clone https://aur.archlinux.org/cider.git
 cd cider
 makepkg -csi
 
-echo "Installing Pulseaudio Volume Control..."
-sudo pacman -Syu pavucontrol
+echo "Installing Spotify..."
+cd /tmp
+git clone https://aur.archlinux.org/spotify.git
+cd spotify
+makepkg -csi
 
 echo "These are the bare basics for music, feel free to suggest things i should add to this script via GitHub."
 sleep 2
