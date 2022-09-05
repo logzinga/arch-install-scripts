@@ -244,6 +244,8 @@ if [ $NVIDIAGPU = y ]
                         clear
                         echo "Installing 32-Bit NVIDIA Drivers..."
                         pacman -Syu lib32-nvidia-utils --noconfirm 
+                        clear
+                        echo "If you're on a laptop, make sure to start applications with 'prime-run' to run them with your NVIDIA Graphics."
                 fi 
 
 clear
