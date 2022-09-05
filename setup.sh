@@ -38,7 +38,7 @@ sleep 1
 
 if [ $UEFICHECK = n ]
     then
-
+        parted /dev/$DRIVETYPE mklabel mbr
 fi
 if [ $UEFICHECK = y ]
     then
@@ -50,10 +50,22 @@ fi
 clear
 echo "How much Swap Space do you want? Example: 2GiB, 512MiB"
 read SWAPAMOUNT
+if [ $UEFICHECK = y ]
+    then
+
 parted /dev/$DRIVETYPE mkpart "swap" linux-swap 301MiB $SWAPAMOUNT
 
 parted /dev/$DRIVETYPE mkpart "root" ext4 $SWAPAMOUNT 100%
 
+fi
+
+if [ $UEFICHECK = n ]
+    then
+        parted /dev/$DRIVETYPE mkpart "swap" linux-swap 1MiB $SWAPAMOUNT
+
+        parted /dev/$DRIVETYPE mkpart "root" ext4 $SWAPAMOUNT 100%
+
+fi
 clear
 echo "Formatting Partitions..." 
 sleep 2
@@ -94,7 +106,36 @@ fi
 
 if [ $UEFICHECK = n ]
     then
+        if [ $DRIVETYPE = vda ]
+	then
+		mkfs.ext4 /dev/vda2
+        mkswap /dev/vda1
+        
 
+        mount /dev/vda2 /mnt 
+        
+        swapon /dev/vda1
+    fi
+    if [ $DRIVETYPE = sda ]
+	then
+		mkfs.ext4 /dev/sda2
+        mkswap /dev/sda1
+        
+
+        mount /dev/sda2 /mnt 
+        
+        swapon /dev/sda1
+    fi
+    if [ $DRIVETYPE = nvme0n1 ]
+	then
+		mkfs.ext4 /dev/nvme0n1p2
+        mkswap /dev/nvme0n1p1
+        
+
+        mount /dev/nvme0n1p2 /mnt 
+        
+        swapon /dev/nvme0n1p1
+    fi
 fi
 
 clear
