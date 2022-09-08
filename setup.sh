@@ -110,7 +110,7 @@ if [ $UEFICHECK = n ]
 	then
 		mkfs.ext4 /dev/vda2
         mkswap /dev/vda1
-        parted set /dev/vda2 boot on
+        
 
         mount /dev/vda2 /mnt 
         
@@ -120,7 +120,7 @@ if [ $UEFICHECK = n ]
 	then
 		mkfs.ext4 /dev/sda2
         mkswap /dev/sda1
-        parted set /dev/sda2 boot on
+        parted /dev/sda set 2 boot on
 
         mount /dev/sda2 /mnt 
         
@@ -130,7 +130,7 @@ if [ $UEFICHECK = n ]
 	then
 		mkfs.ext4 /dev/nvme0n1p2
         mkswap /dev/nvme0n1p1
-        parted set /dev/nvmeon1p2 boot on
+        parted /dev/nvme0n1 set 2 boot on
         
 
         mount /dev/nvme0n1p2 /mnt 
