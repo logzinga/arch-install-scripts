@@ -145,7 +145,7 @@ if [ $UEFICHECK2 = n ]
         sleep 2
         echo "Which drive type is the one you're installing on? ( sda / vda / nvme0n1 )"
         read DISKTYPE
-        pacman -Syu grub 
+        pacman -Syu grub --noconfirm
         grub-install --target=i386-pc /dev/$DISKTYPE
         grub-mkconfig -o /boot/grub/grub.cfg
 
