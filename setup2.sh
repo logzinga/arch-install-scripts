@@ -29,7 +29,7 @@ clear
 echo "What timezone is your country in? (cap sensitive)"
 read COUNTRY
 sleep 2
-                                        # i absolutely hate how im doing the timezone selection, FIXME
+                                        # i absolutely hate how im doing the timezone selection
 clear
 echo "What city is your timezone set to? (cap sensitive)"
 read CITY
