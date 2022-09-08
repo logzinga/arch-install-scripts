@@ -22,8 +22,6 @@ apologies if this repo is really bad. i am not good at this stuff
 
 * Wiki page for issues
 
-* Legacy BIOS Support
-
 * Post-Install Presets (music, games etc) [ working on ]
 
 
