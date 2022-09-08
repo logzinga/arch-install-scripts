@@ -136,7 +136,7 @@ sleep 2
 if [ $UEFICHECK2 = y ]
     then
         pacman -Syu grub efibootmgr intel-ucode amd-ucode --noconfirm
-        grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # possibly Legacy Boot support at some point?
+        grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB 
         grub-mkconfig -o /boot/grub/grub.cfg
 fi
 if [ $UEFICHECK2 = n ]
@@ -235,7 +235,7 @@ pacman -Syu sudo --noconfirm
 clear
 echo "Installing pipewire..."
 sleep 5
-pacman -Syu pipewire pipewire-alsa pipewire-docs pipewire-jack pipewire-pulse pipewire-v4l2 pipewire-x11-bell pipewire-zeroconf wireplumber wireplumber-docs --noconfirm
+pacman -Syu pipewire pipewire-alsa pipewire-docs pipewire-jack pipewire-pulse pipewire-v4l2 pipewire-x11-bell pipewire-zeroconf wireplumber wireplumber-docs --noconfirm # pipewire doesn't work FIXME
 
 clear
 echo "Would you like to download a GUI Browser? [ firefox / chromium / none ]"
