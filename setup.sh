@@ -168,7 +168,3 @@ echo "When ready, type 'git clone https://github.com/logzinga/arch-install-scrip
 echo "then type 'cd arch-install-scripts'"
 echo "then type './setup2.sh'"
 arch-chroot /mnt
-
-
-
-
