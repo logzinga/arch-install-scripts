@@ -149,7 +149,7 @@ if [ $UEFICHECK2 = n ]
         grub-install --target=i386-pc /dev/$DISKTYPE
         grub-mkconfig -o /boot/grub/grub.cfg
 
-
+fi
 clear
 echo "Would you like to have a Desktop Enviornment (more coming soon) [ mate / kde / gnome / xfce / none ]"
 read DESKTOPENVIRONMENT
@@ -275,5 +275,3 @@ echo "Cleaning up..."
 sleep 1
 cd ..
 rm -R arch-install-scripts
-
-
