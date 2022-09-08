@@ -7,7 +7,7 @@ read UEFICHECK2
 
 echo "Did you do any changes before the first setup that you want to keep in your Install? ( y / n )"
 read PREVCHANGES
-if [ $PREVCHANGES = n ]
+if [ $PREVCHANGES = y ]
     then
         echo "Remake those changes before continuing."
         sleep 1
