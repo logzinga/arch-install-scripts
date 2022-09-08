@@ -235,7 +235,7 @@ pacman -Syu sudo --noconfirm
 clear
 echo "Installing pipewire..."
 sleep 5
-pacman -Syu pipewire pipewire-alsa pipewire-docs pipewire-jack pipewire-pulse pipewire-v4l2 pipewire-x11-bell pipewire-zeroconf wireplumber wireplumber-docs --noconfirm # pipewire doesn't work FIXME
+pacman -Syu pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-v4l2 pipewire-x11-bell pipewire-zeroconf wireplumber --noconfirm # pipewire doesn't work FIXME
 
 clear
 echo "Would you like to download a GUI Browser? [ firefox / chromium / none ]"
