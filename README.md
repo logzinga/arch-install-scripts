@@ -43,6 +43,10 @@ You can also try rebooting the live environment.
 
 More Information: https://wiki.archlinux.org/title/Pacman/Package_signing#Upgrade_system_regularly
 
+If all hope is lost, look at this section. but ONLY do this if none of the above worked. (https://wiki.archlinux.org/title/Pacman/Package_signing#Disabling_signature_checking)
+
+
+
 # License
 
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
