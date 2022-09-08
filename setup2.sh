@@ -2,6 +2,9 @@
 
 clear
 
+echo "Are you on UEFI? ( y / n )"
+read UEFICHECK2
+
 echo "Did you do any changes before the first setup that you want to keep in your Install? ( y / n )"
 read PREVCHANGES
 if [ $PREVCHANGES = n ]
@@ -130,9 +133,22 @@ read NVIDIAGPU
 clear
 echo "Installing GRUB..."
 sleep 2
-pacman -Syu grub efibootmgr intel-ucode amd-ucode --noconfirm
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # possibly Legacy Boot support at some point?
-grub-mkconfig -o /boot/grub/grub.cfg
+if [ $UEFICHECK2 = y ]
+    then
+        pacman -Syu grub efibootmgr intel-ucode amd-ucode --noconfirm
+        grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB # possibly Legacy Boot support at some point?
+        grub-mkconfig -o /boot/grub/grub.cfg
+fi
+if [ $UEFICHECK2 = n ]
+    then
+        fdisk -l
+        sleep 2
+        echo "Which drive type is the one you're installing on? ( sda / vda / nvme0n1 )"
+        read DISKTYPE
+        pacman -Syu grub 
+        grub-install --target=i386-pc /dev/$DISKTYPE
+        grub-mkconfig -o /boot/grub/grub.cfg
+
 
 clear
 echo "Would you like to have a Desktop Enviornment (more coming soon) [ mate / kde / gnome / xfce / none ]"
