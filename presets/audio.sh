@@ -10,6 +10,8 @@ echo "these preset scripts are under construction, somethings may not work as in
 
 sleep 2
 
+clear
+
 echo "This scipt will install some basic applications you might need for playing/editing audio."
 sleep 2
 echo "Do you want to continue? ( y / n )"
@@ -32,7 +34,10 @@ echo "Installing Audacity..."
 sudo pacman -Syu audacity --noconfirm
 
 echo "Installing Pulseaudio Volume Control..."
-sudo pacman -Syu pavucontrol
+sudo pacman -Syu pavucontrol --noconfirm
+
+echo "Installing VLC..."
+sudo pacman -Syu vlc --noconfirm
 
 echo "Installing Cider..."
 cd /tmp
@@ -46,5 +51,5 @@ git clone https://aur.archlinux.org/spotify.git
 cd spotify
 makepkg -csi
 
-echo "These are the bare basics for music, feel free to suggest things i should add to this script via GitHub."
+echo "These are the bare basics for music, feel free to suggest things i should add to this script via GitHub." # its so empty
 sleep 2
