@@ -15,25 +15,16 @@ if [ $PREVCHANGES = y ]
 fi
 
 systemctl enable NetworkManager
-clear
-echo "Do you need to connect to wifi? [ y/n ]"
-read WIFICHECK
-if [ $WIFICHECK = y ]
-        then
-            echo "Entering NetworkManager Interface..."
-            sleep 1
-            nmtui
-fi
 
 clear
 echo "What timezone is your country in? (cap sensitive)"
 read COUNTRY
-sleep 2
+sleep 1
                                         # i absolutely hate how im doing the timezone selection
 clear
 echo "What city is your timezone set to? (cap sensitive)"
 read CITY
-sleep 2
+sleep 1
 
 
 clear
@@ -50,6 +41,7 @@ read LOCALEMD
      then
         nano /etc/locale.gen
         locale-gen
+        clear
         echo "Now set the LANG variable accordingly."
         sleep 2
         nano /etc/locale.conf
