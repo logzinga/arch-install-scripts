@@ -160,11 +160,12 @@ echo "Installing NetworkManager..."
 sleep 1
 pacstrap /mnt networkmanager
 
+cp /arch-install-scripts/setup2.sh /mnt/usr/bin/setup
+chmod +777 /mnt/usr/bin/setup
 
 clear
 echo "You are now booting into the Chroot environment."
 sleep 3
-echo "When ready, type 'git clone https://github.com/logzinga/arch-install-scripts.git' "
-echo "then type 'cd arch-install-scripts'"
-echo "then type './setup2.sh'"
+echo "When ready, type 'setup' "
+echo "Make sure to redo any changes inside the chroot environment"
 arch-chroot /mnt
