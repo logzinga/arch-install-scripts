@@ -20,7 +20,7 @@ clear
 echo "What timezone is your country in? (cap sensitive)"
 read COUNTRY
 sleep 1
-                                        # i absolutely hate how im doing the timezone selection
+# i absolutely hate how im doing the timezone selection
 clear
 echo "What city is your timezone set to? (cap sensitive)"
 read CITY
@@ -35,7 +35,7 @@ ln -sf /usr/share/zoneinfo/$COUNTRY/$CITY /etc/localtime
 hwclock --systohc
 
 clear
-echo "Would you like to enter your locales manually or have it set to default? [ m/d ]"
+echo "Would you like to enter your locales manually or have it set to default? [ m / d ]"
 read LOCALEMD
     if [ $LOCALEMD = m ]
      then
@@ -65,7 +65,7 @@ sleep 3
 mkinitcpio -P
 
 clear
-echo "Would you like to have a Root Account? [ y/n ]"
+echo "Would you like to have a Root Account? [ y / n ]"
 read ROOTACC
     if [ $ROOTACC = y ]
         then
@@ -76,12 +76,12 @@ read ROOTACC
 fi
 
 clear
-echo "Do you have NVIDIA Graphics? [ y/n ]"
+echo "Do you have NVIDIA Graphics? [ y / n ]"
 read NVIDIAGPU
     if [ $NVIDIAGPU = y ]
         then
             clear
-            echo "Do you have a newer NVIDIA Graphics Card? (GeForce GTX 745 or higher) [ y/n ]"
+            echo "Do you have a newer NVIDIA Graphics Card? (GeForce GTX 745 or higher) [ y / n ]"
             read NVIDIAGPUNEW
                 if [ $NVIDIAGPUNEW = y ]
                     then
@@ -174,7 +174,7 @@ if [ $DESKTOPENVIRONMENT = xfce ]
     then 
         clear
         echo "Installing xfce..."
-        pacman -Syu xfce4 sddm --noconfirm # i don't like xfce using sddm, FIXME
+        pacman -Syu xfce4 sddm --noconfirm # change asap
         clear
         echo "Enabling SDDM..."
         sleep 2
@@ -194,14 +194,14 @@ if [ $DESKTOPENVIRONMENT = mate ]
 fi
 
 clear
-echo "Would you like to add a user account? [ y/n ]"
+echo "Would you like to add a user account? [ y / n ]"
 read USERACC
     if [ $USERACC = y ]
         then 
             clear
             echo "What would you like to name the User?"
             read USERACCNAME
-            echo "Would you like the User to be a Superuser? [ y/n ]"
+            echo "Would you like the User to be a Superuser? [ y / n ]"
             read SUPERUSERACC
                 if [ $SUPERUSERACC = y ]
                     then
@@ -253,7 +253,8 @@ if [ $NVIDIAGPU = y ]
                         echo "Installing 32-Bit NVIDIA Drivers..."
                         pacman -Syu lib32-nvidia-utils --noconfirm 
                         clear
-                        echo "If you're on a laptop, make sure to start applications with 'prime-run' to run them with your NVIDIA Graphics."
+                        echo "If you're on a laptop, make sure to start applications with 'prime-run' to run them with your NVIDIA Graphics. If you ONLY want to use the NVIDIA GPU in a laptop, use 'nvidia-xconfig'"
+                        sleep 10
                 fi 
 
 clear
