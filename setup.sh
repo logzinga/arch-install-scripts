@@ -43,7 +43,7 @@ fi
 if [ $UEFICHECK = y ]
     then
 parted /dev/$DRIVETYPE mklabel gpt
-parted /dev/$DRIVETYPE mkpart "EFI" fat32 1MiB 301MiB
+parted /dev/$DRIVETYPE mkpart "EFI" fat32 1MiB 512MiB
 parted /dev/$DRIVETYPE set 1 esp on
 fi
 
@@ -53,7 +53,7 @@ read SWAPAMOUNT
 if [ $UEFICHECK = y ]
     then
 
-parted /dev/$DRIVETYPE mkpart "swap" linux-swap 301MiB $SWAPAMOUNT
+parted /dev/$DRIVETYPE mkpart "swap" linux-swap 512MiB $SWAPAMOUNT
 
 parted /dev/$DRIVETYPE mkpart "root" ext4 $SWAPAMOUNT 100%
 
