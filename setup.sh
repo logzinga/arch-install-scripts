@@ -160,7 +160,7 @@ echo "Installing NetworkManager..."
 sleep 1
 pacstrap /mnt networkmanager
 
-cp /arch-install-scripts/setup2.sh /mnt/usr/bin/setup
+cp setup2.sh /mnt/usr/bin/setup
 chmod +777 /mnt/usr/bin/setup
 
 clear
