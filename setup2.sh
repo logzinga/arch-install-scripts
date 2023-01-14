@@ -256,6 +256,9 @@ if [ $NVIDIAGPU = y ]
                         echo "If you're on a laptop, make sure to start applications with 'prime-run' to run them with your NVIDIA Graphics. If you ONLY want to use the NVIDIA GPU in a laptop, use 'nvidia-xconfig'"
                         sleep 10
                 fi 
+clear                
+mkinitcpio -P
+clear
 
 clear
 echo "You have finished your install of Arch Linux!"
