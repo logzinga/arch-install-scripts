@@ -86,6 +86,7 @@ read NVIDIAGPU
                 if [ $NVIDIAGPUNEW = y ]
                     then
                         pacman -Syu nvidia nvidia-settings nvidia-utils nvidia-prime --noconfirm 
+                        cp files/mkinitcpio-nvidia.conf /etc/mkinitcpio.conf
                 fi 
                 if [ $NVIDIAGPUNEW = n ]
                     then
