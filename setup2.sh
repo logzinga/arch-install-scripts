@@ -254,7 +254,7 @@ if [ $NVIDIAGPU = y ]
                         echo "Installing 32-Bit NVIDIA Drivers..."
                         pacman -Syu lib32-nvidia-utils --noconfirm 
                         clear
-                        echo "If you're on a laptop, make sure to start applications with 'prime-run' to run them with your NVIDIA Graphics. If you ONLY want to use the NVIDIA GPU in a laptop, use 'nvidia-xconfig'"
+                        echo "If you're on a laptop, make sure to start applications with 'prime-run' to run them with your NVIDIA Graphics. If you ONLY want to use the NVIDIA GPU, use 'nvidia-xconfig'"
                         sleep 10
                 fi 
 clear                
